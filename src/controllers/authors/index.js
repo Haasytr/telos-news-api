@@ -57,6 +57,7 @@ const update = async (req, res) => {
   }
 
   const authorUpdated = {
+    id,
     name,
     biography,
     email,
@@ -85,7 +86,7 @@ const remove = async (req, res) => {
 
   authorsDatabase.splice(authorIndex, 1)
 
-  return res.status(200).json({ authorsDatabase })
+  return res.status(200).json(authorsDatabase)
 
 }
 
