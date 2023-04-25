@@ -6,6 +6,8 @@ const newsDatabase = []
 const create = async (req, res) => {
   const { id: author_id } = req.user
 
+
+
   const { title, brief, content, image, publish_date } = req.body
 
   const news = {
@@ -73,7 +75,7 @@ const findByAuthorId = async (req, res) => {
 
   const authorNews = newsDatabase.filter(news => news.author_id === id)
 
-  return res.status(400).json(authorNews)
+  return res.status(200).json(authorNews)
 }
 
 module.exports = {
