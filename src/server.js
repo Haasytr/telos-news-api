@@ -1,4 +1,6 @@
 const express = require('express')
+const { PORT } = require('./config/env')
+
 
 const { authenticateRoutes, authorsRoutes, newsRoutes } = require('./routes/')
 
@@ -13,7 +15,7 @@ app.use(authorsRoutes)
 app.use(newsRoutes)
 
 
-app.listen(3333, () => {
-  console.log(`API RUNNING`)
+app.listen(PORT, () => {
+  console.log(`API RUNNING ON ${PORT}`)
 })
 

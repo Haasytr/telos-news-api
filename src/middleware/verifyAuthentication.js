@@ -1,5 +1,8 @@
 const { verify } = require('jsonwebtoken')
 
+const { JWT_SECRET } = require('../config/env')
+
+
 const invalidTokenMessage = {
   error: '@authenticate/invalid-token',
   message: 'invalid token'
@@ -25,7 +28,7 @@ const verifyAuthenticate = (req, res, next) => {
     return res.status(401).json(invalidTokenMessage)
   }
 
-  verify(token, 'tY8rC9imdO', (err, decoded) => {
+  verify(token, JWT_SECRET, (err, decoded) => {
     if (err) {
       return res.status(401).json(invalidTokenMessage)
     }
@@ -33,7 +36,6 @@ const verifyAuthenticate = (req, res, next) => {
     req.user = decoded;
 
     return next()
-
   })
 
 }

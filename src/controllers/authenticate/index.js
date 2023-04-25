@@ -1,5 +1,8 @@
-const { compareHash } = require('../../lib/hashProvider')
 const { sign } = require('jsonwebtoken')
+
+const { JWT_SECRET } = require('../../config/env')
+
+const { compareHash } = require('../../lib/hashProvider')
 
 const { authorsDatabase } = require('../authors')
 
@@ -23,7 +26,7 @@ const login = async (req, res) => {
     return res.status(400).json(loginErrorMessage)
   }
 
-  const token = sign(author, "tY8rC9imdO", {
+  const token = sign(author, JWT_SECRET, {
     expiresIn: "1h"
   })
 
