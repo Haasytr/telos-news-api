@@ -25,15 +25,17 @@ const verifyAuthenticate = (req, res, next) => {
     return res.status(401).json(invalidTokenMessage)
   }
 
-  const author = verify(token, 'tY8rC9imdO', (err, decoded) => {
+  verify(token, 'tY8rC9imdO', (err, decoded) => {
     if (err) {
       return res.status(401).json(invalidTokenMessage)
     }
 
     req.user = decoded;
+
+    return next()
+
   })
 
-  return next()
 }
 
 module.exports = {
