@@ -55,16 +55,22 @@ const update = async (req, res) => {
     })
   }
 
-  const hashedPassword = await generateHash(password)
-
+  const createdAt = authorsDatabase[authorIndex].createdAt
 
   const authorUpdated = {
     id,
     name,
     biography,
     email,
-    password: hashedPassword,
+    password,
     modifiedAt: new Date(),
+    createdAt
+  }
+
+  if (password) {
+    authorUpdated.password = await generateHash(password)
+  } else {
+    authorUpdated.password = authorsDatabase[authorIndex].password
   }
 
   authorsDatabase[authorIndex] = authorUpdated
