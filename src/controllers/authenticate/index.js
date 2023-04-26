@@ -30,9 +30,11 @@ const login = async (req, res) => {
     expiresIn: "1h"
   })
 
-  delete author.password
+  const authorWithoutPassword = author
 
-  return res.status(200).json({ ...author, token })
+  delete authorWithoutPassword.password
+
+  return res.status(200).json({ ...authorWithoutPassword, token })
 }
 
 
