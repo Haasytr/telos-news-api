@@ -48,7 +48,6 @@ const update = async (req, res) => {
 
   const authorIndex = authorsDatabase.findIndex(u => u.id === id)
 
-
   if (authorIndex < 0) {
     return res.status(400).json({
       error: '@Authors/missing-author',
@@ -56,12 +55,15 @@ const update = async (req, res) => {
     })
   }
 
+  const hashedPassword = await generateHash(password)
+
+
   const authorUpdated = {
     id,
     name,
     biography,
     email,
-    password,
+    password: hashedPassword,
     modifiedAt: new Date(),
   }
 
