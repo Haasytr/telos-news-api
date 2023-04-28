@@ -1,6 +1,6 @@
 const Router = require('express')
 
-const authorsController = require("../controllers/authors")
+const authorsController = require("../controllers/AuthorsController")
 
 const authorsRoutes = Router()
 

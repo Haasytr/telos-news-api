@@ -1,6 +1,5 @@
 const { v4: uuidv4 } = require('uuid');
-const newsRoutes = require('../../routes/news.routes');
-const { authorsDatabase } = require('../authors')
+const { authorsDatabase } = require('./AuthorsController')
 const newsDatabase = []
 
 const create = async (req, res) => {
@@ -42,12 +41,18 @@ const update = async (req, res) => {
     })
   }
 
+  const createdAt = newsDatabase[newsIndex]['createdAt']
+  const authorId = newsDatabase[newsIndex]['author']
+
   const newsUpdated = {
     title,
     brief,
     content,
     image,
+    author_id: authorId,
     modifiedAt: new Date(),
+    createdAt
+
   }
 
   newsDatabase[newsIndex] = newsUpdated
@@ -56,31 +61,31 @@ const update = async (req, res) => {
 
 }
 
-const readAll = async (req, res) => {
-  return res.json(newsDatabase)
+const read = async (req, res) => {
+  const author_id = req.params.id
 
-}
+  if (!author_id) {
+    return res.json(newsDatabase)
+  }
 
-const findByAuthorId = async (req, res) => {
-  const { id } = req.params
+  const authorExists = authorsDatabase.filter(author => author.id === author_id)
 
-  const authorExists = authorsDatabase.find(author => author.id == id)
-
-  if (!authorExists) {
-    return res.status(400).json({
-      error: '@news/missing-author',
-      message: "author not found"
+  if (authorExists < 1) {
+    return res.status(404).json({
+      error: '@news/read',
+      message: 'Author not found'
     })
   }
 
-  const authorNews = newsDatabase.filter(news => news.author_id === id)
+  const authorNews = newsDatabase.filter(news => news.author_id === author_id)
 
   return res.status(200).json(authorNews)
+
+
 }
 
 module.exports = {
   create,
-  readAll,
-  findByAuthorId,
+  read,
   update
 }

@@ -1,6 +1,6 @@
 const { v4: uuidv4 } = require('uuid');
 
-const { generateHash } = require('../../lib/hashProvider')
+const { generateHash } = require('../lib/hashProvider')
 
 const authorsDatabase = []
 

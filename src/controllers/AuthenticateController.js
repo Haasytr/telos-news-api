@@ -1,10 +1,10 @@
 const { sign } = require('jsonwebtoken')
 
-const { JWT_SECRET } = require('../../config/env')
+const { JWT_SECRET } = require('../config/env')
 
-const { compareHash } = require('../../lib/hashProvider')
+const { compareHash } = require('../lib/hashProvider')
 
-const { authorsDatabase } = require('../authors')
+const { authorsDatabase } = require('./AuthorsController')
 
 const loginErrorMessage = {
   error: '@authenticate/login',
@@ -30,7 +30,7 @@ const login = async (req, res) => {
     expiresIn: "1h"
   })
 
-  const authorWithoutPassword = author
+  const authorWithoutPassword = { ...author }
 
   delete authorWithoutPassword.password
 

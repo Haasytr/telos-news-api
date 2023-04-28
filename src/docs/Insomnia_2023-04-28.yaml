@@ -1,0 +1,318 @@
+_type: export
+__export_format: 4
+__export_date: 2023-04-28T18:34:02.418Z
+__export_source: insomnia.desktop.app:v2023.2.0
+resources:
+  - _id: req_8af3991a7f1f4b2e9fce832bb5e88022
+    parentId: fld_476f69f6fe494f0abd16f85ae3148463
+    modified: 1682534201903
+    created: 1682361475297
+    url: "{{ _.baseURL }}/authenticate"
+    name: POST
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"email": "twtwtwtw@live.com",
+        	"password": "aaa"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1682361475297
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_476f69f6fe494f0abd16f85ae3148463
+    parentId: fld_9deda74cda374f9287c058204bc3ea84
+    modified: 1682361473827
+    created: 1682361473827
+    name: Authenticate
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1682361473827
+    _type: request_group
+  - _id: fld_9deda74cda374f9287c058204bc3ea84
+    parentId: wrk_b8ac71e47b7f4f8c9a4a91089cde2b55
+    modified: 1682270044061
+    created: 1682270044061
+    name: TELOS
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1682270044061
+    _type: request_group
+  - _id: wrk_b8ac71e47b7f4f8c9a4a91089cde2b55
+    parentId: null
+    modified: 1682540975650
+    created: 1682270036231
+    name: Telos
+    description: ""
+    scope: design
+    _type: workspace
+  - _id: req_432108e957874bea96e5058697a90344
+    parentId: fld_42d1df963ed74e758fa3e0f1f94d79dc
+    modified: 1682704405469
+    created: 1682452496954
+    url: "{{ _.baseURL }}/news/07e21bf2-7f17-4b65-aa99-eac513bf24c0"
+    name: UPDATE
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |
+        {
+        	"title": "JACUTINGA",
+        	"brief": "GGG PAULISTA",
+        	"content": "CIDADEZINHA ",
+        	"image": "NUM TEM"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      prefix: Bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImIyMWY3YjNhLTEyYWUtNGVlNy04ZjZiLTY4MzE4NmUwZjUxOCIsIm5hbWUiOiJWaW5pY2l1cyIsImJpb2dyYXBoeSI6ImFyaWFsZ3JhbmRlbWl0YSIsImVtYWlsIjoidHd0d3R3dHdAbGl2ZS5jb20iLCJwYXNzd29yZCI6IiQyYiQwOCRMYTVOUTRzMXFpc0NYSlc1RENLbkcuQ0Z2R2F2OFBIcC5vak9OMVR5eWVlRE8waTUwVWZ5MiIsImNyZWF0ZWRBdCI6IjIwMjMtMDQtMjhUMTc6NTI6MjAuNTc5WiIsIm1vZGlmaWVkQXQiOiIyMDIzLTA0LTI4VDE3OjUyOjIwLjU3OVoiLCJpYXQiOjE2ODI3MDQzNDQsImV4cCI6MTY4MjcwNzk0NH0.B-n2sN6B4iIgH4t81cjVOkpJpbGxIlI-FQSuPXncAC8
+    metaSortKey: -1682452496954
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_42d1df963ed74e758fa3e0f1f94d79dc
+    parentId: fld_9deda74cda374f9287c058204bc3ea84
+    modified: 1682448554973
+    created: 1682448543667
+    name: News
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1682361467967
+    _type: request_group
+  - _id: req_c946c4a66ce64b87a5f9697f5d5796a2
+    parentId: fld_42d1df963ed74e758fa3e0f1f94d79dc
+    modified: 1682706336655
+    created: 1682450767033
+    url: "{{ _.baseURL }}/news/76443e38-d8a5-9ec6-34941898ce25"
+    name: READALL
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1682450767033
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_00acc6980c11426db737031fc260c434
+    parentId: fld_42d1df963ed74e758fa3e0f1f94d79dc
+    modified: 1682706319592
+    created: 1682448557498
+    url: "{{ _.baseURL }}/news"
+    name: POST
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"title": "afsfasasazx",
+        	"brief": "twtwtw",
+        	"content": "qweqwe",
+        	"image": "URL",
+        	"publish_date": "2023-02-20"
+        }
+    parameters:
+      - id: pair_f8b11f598e8b4890b7d0128437654794
+        name: ""
+        value: ""
+        description: ""
+        disabled: true
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_4dcc77951a9549248baa2634d2a9c70f
+        disabled: false
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc2NDQzZTM4LWQ4YTUtNDk1ZC05ZWM2LTM0OTQxODk4Y2UyNSIsIm5hbWUiOiJWaW5pY2l1cyIsImJpb2dyYXBoeSI6ImFyaWFsZ3JhbmRlbWl0YSIsImVtYWlsIjoidHd0d3R3dHdAbGl2ZS5jb20iLCJwYXNzd29yZCI6IiQyYiQwOCQwMWNxcWJ5aGt1cXp5NHp0YlNSL0wucHR6VkhiTlE3MkNKZEU2SmRxemxTcGYuMjRJcGN3eSIsImNyZWF0ZWRBdCI6IjIwMjMtMDQtMjhUMTg6MjU6MTEuNTIxWiIsIm1vZGlmaWVkQXQiOiIyMDIzLTA0LTI4VDE4OjI1OjExLjUyMVoiLCJpYXQiOjE2ODI3MDYzMTIsImV4cCI6MTY4MjcwOTkxMn0.BLP_sI2bN_utJ7Baf2nX7bROwVegYRqDA_MG--syiTA
+      prefix: Bearer
+    metaSortKey: -1682448557498
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_7bf2d04270df43019acf400db7dedaa5
+    parentId: fld_93f7d435d69e419a9edd7e590bd9cad4
+    modified: 1682540882845
+    created: 1682270955731
+    url: "{{ _.baseURL }}/authors/689238da-13b0-44ac-a083-e7e6aa5a9700"
+    name: UPDATE
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "Vínicius",
+        	"biography": "arialgrandemita",
+        	"email": "viniciuszero@live.com",
+        	"password": "12333412356"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1682270955731
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_93f7d435d69e419a9edd7e590bd9cad4
+    parentId: fld_9deda74cda374f9287c058204bc3ea84
+    modified: 1682361462107
+    created: 1682361462107
+    name: Authors
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1682361462107
+    _type: request_group
+  - _id: req_8a08f60a13d342ee879c1a369adf5354
+    parentId: fld_93f7d435d69e419a9edd7e590bd9cad4
+    modified: 1682454168223
+    created: 1682270045212
+    url: "{{ _.baseURL }}/authors"
+    name: POST
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "Vinicius",
+        	"biography": "arialgrandemita",
+        	"email": "twtwtwtw@live.com",
+        	"password": "aaa"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1682270955706
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_3c395f0b2507454796122c269d98519c
+    parentId: fld_93f7d435d69e419a9edd7e590bd9cad4
+    modified: 1682534857568
+    created: 1682272573832
+    url: "{{ _.baseURL }}/authors/d38d602e-c896-434d-abaa-f99e07d69e15"
+    name: DELETE
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1682270955681
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_e31ad0b8e7cd4a009c20f9cca33805c9
+    parentId: fld_93f7d435d69e419a9edd7e590bd9cad4
+    modified: 1682361465979
+    created: 1682270036237
+    url: "{{ _.baseURL }}/authors"
+    name: GET
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1682270955631
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_224fbeee95e12a1d803dfe2ffbb65f3b6c12546a
+    parentId: wrk_b8ac71e47b7f4f8c9a4a91089cde2b55
+    modified: 1682271005107
+    created: 1682270036234
+    name: Base Environment
+    data:
+      baseURL: http://localhost:3333
+    dataPropertyOrder:
+      "&":
+        - baseURL
+    color: null
+    isPrivate: false
+    metaSortKey: 1682270036234
+    _type: environment
+  - _id: jar_224fbeee95e12a1d803dfe2ffbb65f3b6c12546a
+    parentId: wrk_b8ac71e47b7f4f8c9a4a91089cde2b55
+    modified: 1682270036235
+    created: 1682270036235
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_9d6e681bfbcd4a3fb10e9268272c7ff3
+    parentId: wrk_b8ac71e47b7f4f8c9a4a91089cde2b55
+    modified: 1682540975649
+    created: 1682270036232
+    fileName: Telos
+    contents: ""
+    contentType: yaml
+    _type: api_spec
+  - _id: uts_e4e5f50700ad4475a381ddefd8a51524
+    parentId: wrk_b8ac71e47b7f4f8c9a4a91089cde2b55
+    modified: 1682270036238
+    created: 1682270036238
+    name: Example Test Suite
+    _type: unit_test_suite
